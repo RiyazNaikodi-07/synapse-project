@@ -1,0 +1,21 @@
+{
+	"name": "ls_sql",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "vmuser1",
+			"database": "sampledb",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "Windows",
+			"userName": "vmuser1\\vmuser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwNzA3NGZlNS01ZmM1LTRiMzAtYWYyZi0yYmYwNzQ0NDU5MTkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "shir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
