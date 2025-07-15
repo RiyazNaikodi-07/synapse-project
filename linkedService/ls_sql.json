@@ -1,6 +1,5 @@
 {
 	"name": "ls_sql",
-	"type": "Microsoft.Synapse/workspaces/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "SqlServer",
@@ -11,11 +10,19 @@
 			"trustServerCertificate": false,
 			"authenticationType": "Windows",
 			"userName": "vmuser1\\vmuser",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwNzA3NGZlNS01ZmM1LTRiMzAtYWYyZi0yYmYwNzQ0NDU5MTkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "vmuser1-secret"
+			}
 		},
 		"connectVia": {
 			"referenceName": "shir",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.Synapse/workspaces/linkedservices"
 }
