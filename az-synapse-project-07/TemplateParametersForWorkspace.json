@@ -8,8 +8,38 @@
 		"az-synapse-project-07-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:az-synapse-project-07.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
+		"ls_adls_accountKey": {
+			"value": ""
+		},
+		"ls_sql_password": {
+			"value": ""
+		},
 		"az-synapse-project-07-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://azsynapseadls07.dfs.core.windows.net"
+		},
+		"ls_adls_properties_typeProperties_url": {
+			"value": "https://stgproject07.dfs.core.windows.net/"
+		},
+		"ls_sql_properties_typeProperties_server": {
+			"value": "vmuser1"
+		},
+		"ls_sql_properties_typeProperties_database": {
+			"value": "sampledb"
+		},
+		"ls_sql_properties_typeProperties_userName": {
+			"value": "vmuser1\\vmuser"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://kv-rgproject07.vault.azure.net/"
+		},
+		"ls_azure_sql_properties_typeProperties_server": {
+			"value": "sqlproject07.database.windows.net"
+		},
+		"ls_azure_sql_properties_typeProperties_database": {
+			"value": "dbproject07"
+		},
+		"ls_azure_sql_properties_typeProperties_userName": {
+			"value": "user"
 		}
 	}
 }
