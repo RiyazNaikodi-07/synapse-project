@@ -16,10 +16,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_adls'"
 		},
-		"ls_sql_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'ls_sql'"
-		},
 		"az-synapse-project-07-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://azsynapseadls07.dfs.core.windows.net"
@@ -142,8 +138,12 @@
 					"authenticationType": "Windows",
 					"userName": "[parameters('ls_sql_properties_typeProperties_userName')]",
 					"password": {
-						"type": "SecureString",
-						"value": "[parameters('ls_sql_password')]"
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "ls_keyvault",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "vmuser1-secret"
 					}
 				},
 				"connectVia": {
@@ -152,7 +152,8 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/shir')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/shir')]",
+				"[concat(variables('workspaceId'), '/linkedServices/ls_keyvault')]"
 			]
 		},
 		{

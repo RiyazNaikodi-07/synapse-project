@@ -11,9 +11,6 @@
 		"ls_adls_accountKey": {
 			"value": ""
 		},
-		"ls_sql_password": {
-			"value": ""
-		},
 		"az-synapse-project-07-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://azsynapseadls07.dfs.core.windows.net"
 		},
